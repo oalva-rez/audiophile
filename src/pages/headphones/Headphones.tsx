@@ -10,16 +10,16 @@ export const Headphones: FC = () => {
 
   return (
     <main>
-      <h1>HEADPHONES</h1>
+      <h1 className="page-header">HEADPHONES</h1>
       <section className="hf--products">
         {headphones.map((obj) => (
           <div className="hf--product" key={obj.id}>
             <img src={obj.image.desktop} alt={obj.name} />
             <div className="hf--product-desc">
               <p>{obj.new && "New Product"}</p>
-              <h2>{obj.name}</h2>
-              <p>{obj.description}</p>
-              <button></button>
+              <h2 className="hf--heading">{obj.name}</h2>
+              <p className="hf--text">{obj.description}</p>
+              <button className="hf--btn">SEE PRODUCT</button>
             </div>
           </div>
         ))}

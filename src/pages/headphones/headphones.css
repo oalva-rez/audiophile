@@ -1,3 +1,67 @@
 .hf--products {
   color: black;
 }
+.hf--products img {
+  width: 540px;
+  height: 560px;
+}
+.hf--product {
+  display: flex;
+  max-width: 1110px;
+  margin: 0px auto 139px;
+  justify-content: space-between;
+}
+
+.hf--product:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.hf--product-desc > * {
+  margin-bottom: 38px;
+}
+.hf--product-desc {
+  display: grid;
+  place-content: center;
+  max-width: 445px;
+}
+
+.hf--heading {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.42857px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.hf--text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.hf--btn {
+  height: 48px;
+  width: 160px;
+  border-radius: 0px;
+  border: none;
+  background-color: var(--secondary-color);
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  cursor: pointer;
+}
+.hf--btn:hover {
+  background-color: var(--secondary-color-light);
+}

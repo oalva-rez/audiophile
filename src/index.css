@@ -18,15 +18,33 @@ body {
   background-color: var(--primary-color);
   color: white;
 }
+.App {
+  display: grid;
+  grid-template-rows: 96px 1fr 100%;
+}
 main {
   background-color: #fff;
+}
+.page-header {
+  background-color: var(--primary-color);
+  height: 241px;
+  display: grid;
+  place-content: center;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.42857px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 /* NAVBAR */
 .header-nav {
   display: flex;
   align-items: center;
-  max-width: var(--content-width);
-  margin: auto;
+  width: var(--content-width);
+  margin: 0 auto;
   height: 96px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }

@@ -30,9 +30,7 @@ export const Home: FC = () => {
           </div>
         </div>
       </section>
-      <section className="categories">
-        <CategoryTiles />
-      </section>
+      <CategoryTiles />
       <section className="showcase">
         <div className="sc1">
           <img src={patternImage} alt="circles" className="sc1--circles" />
@@ -70,9 +68,7 @@ export const Home: FC = () => {
           </div>
         </div>
       </section>
-      <section className="about">
-        <About />
-      </section>
+      <About />
     </main>
   );
 };

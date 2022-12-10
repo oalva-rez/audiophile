@@ -9,7 +9,7 @@ export const CategoryTiles: FC = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <section className="categories">
       <div className="cat-tile" onClick={() => navigate("/headphones")}>
         <img src={headphonesImage} alt="headphones" />
         <h2>HEADPHONES</h2>
@@ -34,6 +34,6 @@ export const CategoryTiles: FC = () => {
           <img src={arrowRightImage} alt="arrow right" />
         </div>
       </div>
-    </>
+    </section>
   );
 };

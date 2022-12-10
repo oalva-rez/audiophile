@@ -3,7 +3,7 @@ import headshotImage from "../assets/shared/desktop/image-best-gear.jpg";
 
 export const About: FC = () => {
   return (
-    <>
+    <section className="about">
       <div className="about--text">
         <h2>
           Bringing you the <span className="word-color">best</span> audio gear
@@ -22,6 +22,6 @@ export const About: FC = () => {
         alt="head shot man with headphones"
         className="about--image"
       />
-    </>
+    </section>
   );
 };

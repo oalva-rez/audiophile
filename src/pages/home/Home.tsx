@@ -6,24 +6,28 @@ import heroImage from "../../assets/home/desktop/image-hero.jpg";
 import heroImageTablet from "../../assets/home/tablet/image-header.jpg";
 import zx9Image from "../../assets/home/desktop/image-speaker-zx9.png";
 import zx7Image from "../../assets/home/desktop/image-speaker-zx7.jpg";
+import zx7ImageMobile from "../../assets/home/mobile/image-speaker-zx7.jpg";
 import yx1Image from "../../assets/home/desktop/image-earphones-yx1.jpg";
 import patternImage from "../../assets/home/desktop/pattern-circles.svg";
 import { IScreenSize } from "../../interfaces/screenSize";
 export const Home: FC<IScreenSize> = ({ mobileScreen, tabletScreen }) => {
-  function returnCorrectImage() {
+  function returnCorrectImage(mobileImage: string, desktopImage: string) {
     if (mobileScreen) {
-      return heroImageTablet;
+      return mobileImage;
     } else if (tabletScreen) {
-      return heroImageTablet;
+      return mobileImage;
     } else {
-      return heroImage;
+      return desktopImage;
     }
   }
   return (
     <main>
       <section className="hero">
         <div className="hero-wrapper">
-          <img src={returnCorrectImage()} alt="hero" />
+          <img
+            src={returnCorrectImage(heroImageTablet, heroImage)}
+            alt="hero"
+          />
           <div className="hero--content">
             <p className="hero--np">NEW PRODUCT</p>
             <h1>
@@ -62,7 +66,11 @@ export const Home: FC<IScreenSize> = ({ mobileScreen, tabletScreen }) => {
           </div>
         </div>
         <div className="sc2">
-          <img src={zx7Image} alt="zx7" className="sc2--speaker" />
+          <img
+            src={mobileScreen ? zx7ImageMobile : zx7Image}
+            alt="zx7"
+            className="sc2--speaker"
+          />
           <div className="sc2--content">
             <h2>ZX7 SPEAKER</h2>
             <button>

@@ -9,46 +9,42 @@ export const Footer: FC = () => {
   return (
     <footer>
       <div className="footer--wrapper">
-        <div>
+        <Link to="/" className="footer--logo">
+          <img src={logo} alt="logo" className="footer--logo" />
+        </Link>
+        <p className="footer--text">
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 7 days a week.
+        </p>
+        <p className="footer--copyright">Copyright 2022. All Rights Reserved</p>
+        <nav className="footer--nav">
+          <ul>
+            <li>
+              <Link to="/home">HOME</Link>
+            </li>
+            <li>
+              <Link to="/headphones">HEADPHONES</Link>
+            </li>
+            <li>
+              <Link to="/speakers">SPEAKERS</Link>
+            </li>
+            <li>
+              <Link to="/earphones">EARPHONES</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="footer--social-media">
           <Link to="/">
-            <img src={logo} alt="logo" className="footer--logo" />
+            <img src={facebook} alt="facebook" />
           </Link>
-          <p>
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we’re open 7 days a week.
-          </p>
-          <p>Copyright 2022. All Rights Reserved</p>
-        </div>
-        <div>
-          <nav className="footer--nav">
-            <ul>
-              <li>
-                <Link to="/home">HOME</Link>
-              </li>
-              <li>
-                <Link to="/headphones">HEADPHONES</Link>
-              </li>
-              <li>
-                <Link to="/speakers">SPEAKERS</Link>
-              </li>
-              <li>
-                <Link to="/earphones">EARPHONES</Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="footer--social-media">
-            <Link to="/">
-              <img src={facebook} alt="facebook" />
-            </Link>
-            <Link to="/">
-              <img src={twitter} alt="twitter" />
-            </Link>
-            <Link to="/">
-              <img src={instagram} alt="instagram" />
-            </Link>
-          </div>
+          <Link to="/">
+            <img src={twitter} alt="twitter" />
+          </Link>
+          <Link to="/">
+            <img src={instagram} alt="instagram" />
+          </Link>
         </div>
       </div>
     </footer>

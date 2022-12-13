@@ -1,19 +1,29 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { CategoryTiles } from "../../components/CategoryTiles";
 import { About } from "../../components/About";
 import heroImage from "../../assets/home/desktop/image-hero.jpg";
+import heroImageTablet from "../../assets/home/tablet/image-header.jpg";
 import zx9Image from "../../assets/home/desktop/image-speaker-zx9.png";
 import zx7Image from "../../assets/home/desktop/image-speaker-zx7.jpg";
 import yx1Image from "../../assets/home/desktop/image-earphones-yx1.jpg";
 import patternImage from "../../assets/home/desktop/pattern-circles.svg";
-
-export const Home: FC = () => {
+import { IScreenSize } from "../../interfaces/screenSize";
+export const Home: FC<IScreenSize> = ({ mobileScreen, tabletScreen }) => {
+  function returnCorrectImage() {
+    if (mobileScreen) {
+      return heroImageTablet;
+    } else if (tabletScreen) {
+      return heroImageTablet;
+    } else {
+      return heroImage;
+    }
+  }
   return (
     <main>
       <section className="hero">
         <div className="hero-wrapper">
-          <img src={heroImage} alt="hero" />
+          <img src={returnCorrectImage()} alt="hero" />
           <div className="hero--content">
             <p className="hero--np">NEW PRODUCT</p>
             <h1>
@@ -30,7 +40,9 @@ export const Home: FC = () => {
           </div>
         </div>
       </section>
+
       <CategoryTiles />
+
       <section className="showcase">
         <div className="sc1">
           <img src={patternImage} alt="circles" className="sc1--circles" />

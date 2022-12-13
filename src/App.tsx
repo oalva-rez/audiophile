@@ -10,13 +10,27 @@ import { Checkout } from "./pages/checkout/Checkout";
 import { CartProvider } from "./context/CartContext";
 
 const App = () => {
+  const TABLET_SIZE = 820;
+  const MOBILE_SIZE = 500;
+
   const [mobileScreen, setMobileScreen] = useState(false);
+  const [tabletScreen, setTabletScreen] = useState(false);
+
+  // manage screen size
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 800) {
-        setMobileScreen(true);
-      } else if (window.innerWidth >= 800) {
+      if (
+        window.innerWidth <= TABLET_SIZE &&
+        window.innerWidth >= MOBILE_SIZE
+      ) {
+        setTabletScreen(true);
         setMobileScreen(false);
+      } else if (window.innerWidth >= TABLET_SIZE) {
+        setTabletScreen(false);
+        setMobileScreen(false);
+      } else if (window.innerWidth <= MOBILE_SIZE) {
+        setMobileScreen(true);
+        setTabletScreen(false);
       }
     }
     handleResize();
@@ -26,9 +40,14 @@ const App = () => {
   return (
     <div className="App">
       <CartProvider>
-        <Navbar mobileScreen={mobileScreen} />
+        <Navbar mobileScreen={mobileScreen} tabletScreen={tabletScreen} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home mobileScreen={mobileScreen} tabletScreen={tabletScreen} />
+            }
+          />
           <Route path="/headphones" element={<Headphones />} />
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/earphones" element={<Earphones />} />

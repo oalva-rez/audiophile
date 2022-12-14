@@ -14,7 +14,6 @@ export const Navbar: FC<IScreenSize> = ({ mobileScreen, tabletScreen }) => {
   function closeMenu() {
     setMenuOpen(false);
   }
-  console.log(mobileScreen, tabletScreen);
   return mobileScreen || tabletScreen ? (
     <nav className="header-nav">
       <Menu isOpen={menuOpen} onStateChange={handleStateChange}>

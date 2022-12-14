@@ -7,6 +7,7 @@ import { Headphones } from "./pages/headphones/Headphones";
 import { Speakers } from "./pages/speakers/Speakers";
 import { Earphones } from "./pages/earphones/Earphones";
 import { Checkout } from "./pages/checkout/Checkout";
+import { ProductDetail } from "./pages/productDetail/ProductDetail";
 import { CartProvider } from "./context/CartContext";
 
 const App = () => {
@@ -57,8 +58,35 @@ const App = () => {
               />
             }
           />
+          <Route
+            path="/headphones/:id"
+            element={
+              <ProductDetail
+                mobileScreen={mobileScreen}
+                tabletScreen={tabletScreen}
+              />
+            }
+          />
           <Route path="/speakers" element={<Speakers />} />
+          <Route
+            path="/speakers/:id"
+            element={
+              <ProductDetail
+                mobileScreen={mobileScreen}
+                tabletScreen={tabletScreen}
+              />
+            }
+          />
           <Route path="/earphones" element={<Earphones />} />
+          <Route
+            path="/earphones/:id"
+            element={
+              <ProductDetail
+                mobileScreen={mobileScreen}
+                tabletScreen={tabletScreen}
+              />
+            }
+          />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />

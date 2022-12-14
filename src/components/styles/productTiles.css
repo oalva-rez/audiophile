@@ -1,5 +1,6 @@
 .products {
   color: black;
+  padding: 0 var(--content-padding);
 }
 .products img {
   width: 540px;
@@ -10,6 +11,7 @@
   max-width: 1110px;
   margin: 0px auto 139px;
   justify-content: space-between;
+  gap: var(--content-padding);
 }
 .products--tile:first-child {
   margin-top: 139px;
@@ -76,4 +78,29 @@
 }
 .products--btn:hover {
   background-color: var(--secondary-color-light);
+}
+
+@media (max-width: 820px) {
+  .products--tile:first-child {
+    margin-top: var(--content-padding);
+  }
+  .products {
+    margin-top: var(--content-padding) !important;
+  }
+  .products--tile {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 38px;
+  }
+  .products--tile img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .products--desc {
+    text-align: center;
+  }
+  .products--btn {
+    margin: auto;
+  }
 }

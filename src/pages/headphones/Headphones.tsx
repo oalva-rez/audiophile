@@ -4,7 +4,8 @@ import { CategoryTiles } from "../../components/CategoryTiles";
 import { ProductTile } from "../../components/ProductTile";
 import { About } from "../../components/About";
 import data from "../../../data.json";
-export const Headphones: FC = () => {
+import { IScreenSize } from "../../interfaces/screenSize";
+export const Headphones: FC<IScreenSize> = ({ mobileScreen, tabletScreen }) => {
   // const [products, setProducts] = useCartContext();
   // console.log(products);
 
@@ -14,7 +15,11 @@ export const Headphones: FC = () => {
   return (
     <main>
       <h1 className="page-header">HEADPHONES</h1>
-      <ProductTile data={headphonesData} />
+      <ProductTile
+        data={headphonesData}
+        mobileScreen={mobileScreen}
+        tabletScreen={tabletScreen}
+      />
       <CategoryTiles />
       <About />
     </main>

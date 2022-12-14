@@ -48,7 +48,15 @@ const App = () => {
               <Home mobileScreen={mobileScreen} tabletScreen={tabletScreen} />
             }
           />
-          <Route path="/headphones" element={<Headphones />} />
+          <Route
+            path="/headphones"
+            element={
+              <Headphones
+                mobileScreen={mobileScreen}
+                tabletScreen={tabletScreen}
+              />
+            }
+          />
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/earphones" element={<Earphones />} />
           <Route path="/checkout" element={<Checkout />} />

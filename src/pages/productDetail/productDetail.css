@@ -1,5 +1,6 @@
 .products--tile.detail {
   flex-direction: row !important;
+  position: relative;
 }
 
 .detail--price {
@@ -12,4 +13,70 @@
   text-transform: uppercase;
 
   color: #000000;
+}
+
+.go-back {
+  position: absolute;
+  top: -60px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  text-decoration: none;
+}
+.detail--cart {
+  display: flex;
+}
+.detail--update-cart {
+  display: flex;
+  width: 120px;
+  height: 48px;
+  margin-right: 20px;
+}
+.detail--update-cart > * {
+  flex: 1;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+.detail--num {
+  background-color: var(--light-grey);
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+}
+.detail--change {
+  background-color: var(--light-grey);
+  border: none;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+
+  text-transform: uppercase;
+
+  color: #0000007f;
+}
+
+.detail--add-to-cart {
+  width: 160px;
+  height: 48px;
+  border: none;
+  background-color: var(--secondary-color);
+
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
 }

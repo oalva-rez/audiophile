@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import data from "../../../data.json";
+import { Link } from "react-router-dom";
 import { IScreenSize } from "../../interfaces/screenSize";
 import { useParams } from "react-router-dom";
 import { formatter } from "../../utilities/numberFormatter";
@@ -11,12 +12,17 @@ export const ProductDetail: FC<IScreenSize> = ({
   const { id } = useParams();
 
   const product = data.find((product) => product.id === parseInt(id));
-  console.log(product?.image.tablet);
+
+  //pathname for the link to go back to the correct page
+  const pagePathName = "/" + window.location.pathname.split("/")[1];
 
   return (
     <main>
       <section className="products">
         <div className="products--tile detail" key={product.id}>
+          <Link to={pagePathName} className="go-back">
+            Go Back
+          </Link>
           <img
             src={tabletScreen ? product.image.tablet : product.image.desktop}
             alt={product.name}
@@ -28,9 +34,9 @@ export const ProductDetail: FC<IScreenSize> = ({
             <p className="detail--price">{formatter.format(product.price)}</p>
             <div className="detail--cart">
               <div className="detail--update-cart">
-                <button className="detail--plus">+</button>
+                <button className="detail--change">+</button>
                 <div className="detail--num">0</div>
-                <button className="detail--minus">-</button>
+                <button className="detail--change">-</button>
               </div>
               <button className="detail--add-to-cart">Add to Cart</button>
             </div>

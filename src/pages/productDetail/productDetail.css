@@ -29,6 +29,9 @@
   opacity: 0.5;
   text-decoration: none;
 }
+.go-back:hover {
+  text-decoration: underline;
+}
 .detail--cart {
   display: flex;
   max-width: 296px;
@@ -67,6 +70,7 @@
   text-transform: uppercase;
 
   color: #0000007f;
+  cursor: pointer;
 }
 
 .detail--add-to-cart {
@@ -85,6 +89,7 @@
   text-transform: uppercase;
   color: #ffffff;
   padding: 0 10px;
+  cursor: pointer;
 }
 
 /* FEATURES */
@@ -160,4 +165,7 @@
   .products--tile.detail .products--desc > * {
     margin-bottom: 38px;
   }
+}
+.detail--add-to-cart:hover {
+  background-color: var(--secondary-color-light);
 }

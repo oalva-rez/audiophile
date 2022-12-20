@@ -11,21 +11,12 @@ import yx1Image from "../../assets/home/desktop/image-earphones-yx1.jpg";
 import patternImage from "../../assets/home/desktop/pattern-circles.svg";
 import { IScreenSize } from "../../interfaces/screenSize";
 export const Home: FC<IScreenSize> = ({ mobileScreen, tabletScreen }) => {
-  function returnCorrectImage(mobileImage: string, desktopImage: string) {
-    if (mobileScreen) {
-      return mobileImage;
-    } else if (tabletScreen) {
-      return mobileImage;
-    } else {
-      return desktopImage;
-    }
-  }
   return (
     <main>
       <section className="hero">
         <div className="hero-wrapper">
           <img
-            src={returnCorrectImage(heroImageTablet, heroImage)}
+            src={mobileScreen || tabletScreen ? heroImageTablet : heroImage}
             alt="hero"
           />
           <div className="hero--content">

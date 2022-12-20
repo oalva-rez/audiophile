@@ -17,7 +17,6 @@ const App = () => {
   const [mobileScreen, setMobileScreen] = useState(false);
   const [tabletScreen, setTabletScreen] = useState(false);
 
-  // manage screen size
   useEffect(() => {
     function handleResize() {
       if (
@@ -26,12 +25,15 @@ const App = () => {
       ) {
         setTabletScreen(true);
         setMobileScreen(false);
+        return;
       } else if (window.innerWidth >= TABLET_SIZE) {
         setTabletScreen(false);
         setMobileScreen(false);
+        return;
       } else if (window.innerWidth <= MOBILE_SIZE) {
         setMobileScreen(true);
         setTabletScreen(false);
+        return;
       }
     }
     handleResize();

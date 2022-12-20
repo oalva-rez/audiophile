@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { IScreenSize } from "../../interfaces/screenSize";
 import { useParams } from "react-router-dom";
 import { formatter } from "../../utilities/numberFormatter";
-
+import { returnCorrectImage } from "../../utilities/returnCorrectImage";
 export const ProductDetail: FC<IScreenSize> = ({
   mobileScreen,
   tabletScreen,
@@ -15,7 +15,6 @@ export const ProductDetail: FC<IScreenSize> = ({
 
   //pathname for the link to go back to the correct page
   const pagePathName = "/" + window.location.pathname.split("/")[1];
-
   return (
     <main>
       <section className="products">
@@ -24,7 +23,13 @@ export const ProductDetail: FC<IScreenSize> = ({
             Go Back
           </Link>
           <img
-            src={tabletScreen ? product.image.tablet : product.image.desktop}
+            src={returnCorrectImage(
+              product?.image.mobile,
+              product?.image.tablet,
+              product?.image.desktop,
+              mobileScreen,
+              tabletScreen
+            )}
             alt={product.name}
           />
           <div className="products--desc">
@@ -42,6 +47,24 @@ export const ProductDetail: FC<IScreenSize> = ({
             </div>
           </div>
         </div>
+      </section>
+      <section className="features">
+        <h2 className="PD-heading">Features</h2>
+        {product?.features.split("\n\n").map((p, index) => {
+          return <p key={index}>{p}</p>;
+        })}
+      </section>
+      <section className="in-the-box">
+        <h2 className="PD-heading">In the box</h2>
+        <ul className="in-the-box--list">
+          {product?.includes.map((i, index) => {
+            return (
+              <li key={index}>
+                <span>x{i.quantity}</span> {i.item}
+              </li>
+            );
+          })}
+        </ul>
       </section>
     </main>
   );

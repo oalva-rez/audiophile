@@ -34,9 +34,9 @@ export const ProductDetail: FC<IScreenSize> = ({
             <p className="detail--price">{formatter.format(product.price)}</p>
             <div className="detail--cart">
               <div className="detail--update-cart">
-                <button className="detail--change">+</button>
-                <div className="detail--num">0</div>
                 <button className="detail--change">-</button>
+                <div className="detail--num">0</div>
+                <button className="detail--change">+</button>
               </div>
               <button className="detail--add-to-cart">Add to Cart</button>
             </div>

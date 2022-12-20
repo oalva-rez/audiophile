@@ -28,6 +28,9 @@
   opacity: 0.5;
   text-decoration: none;
 }
+.go-back:hover {
+  text-decoration: underline;
+}
 .detail--cart {
   display: flex;
 }
@@ -62,6 +65,7 @@
   text-transform: uppercase;
 
   color: #0000007f;
+  cursor: pointer;
 }
 
 .detail--add-to-cart {
@@ -79,4 +83,8 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #ffffff;
+  cursor: pointer;
+}
+.detail--add-to-cart:hover {
+  background-color: var(--secondary-color-light);
 }

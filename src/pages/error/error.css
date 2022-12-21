@@ -1,0 +1,7 @@
+.error {
+  height: 80vh;
+  color: black;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}

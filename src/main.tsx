@@ -5,6 +5,7 @@ import "./index.css";
 import "./pages/home/home.css";
 import "./pages/headphones/headphones.css";
 import "./pages/productDetail/productDetail.css";
+import "./pages/error/error.css";
 
 import "./components/styles/about.css";
 import "./components/styles/footer.css";

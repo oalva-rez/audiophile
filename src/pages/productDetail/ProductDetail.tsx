@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import data from "../../../data.json";
 import { Link } from "react-router-dom";
+import { Error } from "../error/Error";
 import { IScreenSize } from "../../interfaces/screenSize";
 import { useParams } from "react-router-dom";
 import { formatter } from "../../utilities/numberFormatter";
@@ -15,7 +16,7 @@ export const ProductDetail: FC<IScreenSize> = ({
 
   //pathname for the link to go back to the correct page
   const pagePathName = "/" + window.location.pathname.split("/")[1];
-  return (
+  return product ? (
     <main>
       <section className="products">
         <div className="products--tile detail" key={product.id}>
@@ -24,9 +25,9 @@ export const ProductDetail: FC<IScreenSize> = ({
           </Link>
           <img
             src={returnCorrectImage(
-              product?.image.mobile,
-              product?.image.tablet,
-              product?.image.desktop,
+              product.image.mobile,
+              product.image.tablet,
+              product.image.desktop,
               mobileScreen,
               tabletScreen
             )}
@@ -48,24 +49,28 @@ export const ProductDetail: FC<IScreenSize> = ({
           </div>
         </div>
       </section>
-      <section className="features">
-        <h2 className="PD-heading">Features</h2>
-        {product?.features.split("\n\n").map((p, index) => {
-          return <p key={index}>{p}</p>;
-        })}
-      </section>
-      <section className="in-the-box">
-        <h2 className="PD-heading">In the box</h2>
-        <ul className="in-the-box--list">
-          {product?.includes.map((i, index) => {
-            return (
-              <li key={index}>
-                <span>x{i.quantity}</span> {i.item}
-              </li>
-            );
+      <section className="product-info">
+        <div className="features">
+          <h2 className="PD-heading">Features</h2>
+          {product.features.split("\n\n").map((p, index) => {
+            return <p key={index}>{p}</p>;
           })}
-        </ul>
+        </div>
+        <div className="in-the-box">
+          <h2 className="PD-heading">In the box</h2>
+          <ul className="in-the-box--list">
+            {product.includes.map((i, index) => {
+              return (
+                <li key={index}>
+                  <span className="PD-quantity">{i.quantity}x</span> {i.item}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </section>
     </main>
+  ) : (
+    <Error />
   );
 };

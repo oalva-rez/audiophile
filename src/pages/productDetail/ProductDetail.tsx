@@ -62,7 +62,8 @@ export const ProductDetail: FC<IScreenSize> = ({
             {product.includes.map((i, index) => {
               return (
                 <li key={index}>
-                  <span className="PD-quantity">{i.quantity}x</span> {i.item}
+                  <span className="PD-quantity">{i.quantity}x</span>{" "}
+                  <p>{i.item}</p>
                 </li>
               );
             })}
